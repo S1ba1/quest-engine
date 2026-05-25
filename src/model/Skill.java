@@ -5,5 +5,6 @@ public enum Skill {
     FITNESS,
     STUDY,
     CREATIVE,
-    SOCIAL
+    SOCIAL,
+    GAMING
 }
