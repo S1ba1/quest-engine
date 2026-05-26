@@ -23,12 +23,15 @@ The project starts as a Java CLI application and is designed to evolve later int
 ## Current Features
 
 - Quest creation
-- Difficulty system
-- XP reward system
+- Quest completion/failure system
+- Difficulty-based XP rewards
 - Quest statuses
 - Validation for safe object creation
 - Factory-based quest creation
 - Immutable core quest properties
+- Quest management service
+- Stream-based quest filtering
+- Optional-based quest lookup
 
 ---
 
@@ -162,10 +165,13 @@ This project is used to practice:
 - Enums
 - Encapsulation
 - Validation
+- Factory Methods
 - Collections and Streams
+- Optional
 - Service Architecture
+- CLI Architecture
+- Separation of Concerns
 - Persistence
 - APIs and Async Programming
-- REST API
 - Frontend
 - React
