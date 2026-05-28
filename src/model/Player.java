@@ -1,6 +1,7 @@
 package model;
 
 public class Player {
+    //simple implementation
     private final String name;
 
     Player(String name) {
