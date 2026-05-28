@@ -32,6 +32,34 @@ The project starts as a Java CLI application and is designed to evolve later int
 - Quest management service
 - Stream-based quest filtering
 - Optional-based quest lookup
+- Console-based CLI interface
+- Interactive menu system
+- Enum-based user input parsing
+- Custom quest display formatting
+---
+
+# Next Steps
+
+## Immediate Next Steps
+
+- Add `Player` class
+- Implement `RewardService`
+- Award XP when quests are completed
+- Add player leveling system
+- Improve quest display formatting
+- Handle invalid menu input safely
+- Handle invalid quest IDs safely
+- Show available enum values during input
+
+## Upcoming Features
+
+- Quest filtering by skill/difficulty
+- Completed quest history
+- Quest statistics
+- JSON save/load system
+- Achievement system
+- Daily quests
+- Streak tracking
 
 ---
 
@@ -81,6 +109,8 @@ The project starts as a Java CLI application and is designed to evolve later int
 
 # Project Structure
 
+# Project Structure
+
 ```text
 quest-engine/
  └── src/
@@ -91,9 +121,11 @@ quest-engine/
      │   ├── Skill.java
      │   ├── Difficulty.java
      │   └── QuestStatus.java
-     └── service/
-         ├── QuestService.java
-         └── RewardService.java
+     ├── service/
+     │   ├── QuestService.java
+     │   └── RewardService.java
+     └── ui/
+         └── ConsoleUI.java
 ```
 
 ---
