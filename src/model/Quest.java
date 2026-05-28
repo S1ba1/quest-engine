@@ -101,5 +101,10 @@ public class Quest {
     public QuestStatus getStatus() {
         return status;
     }
-
+    
+    //very simple toString() -> testing
+    @Override
+    public String toString() {
+        return id + ". " + title;
+    }
 }
