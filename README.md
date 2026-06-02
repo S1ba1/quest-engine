@@ -36,30 +36,43 @@ The project starts as a Java CLI application and is designed to evolve later int
 - Interactive menu system
 - Enum-based user input parsing
 - Custom quest display formatting
+- Player progression system
+- Automatic XP rewards for completed quests
+- Dynamic level-up system
 ---
 
 # Next Steps
 
 ## Immediate Next Steps
 
-- Add `Player` class
-- Implement `RewardService`
-- Award XP when quests are completed
-- Add player leveling system
-- Improve quest display formatting
-- Handle invalid menu input safely
-- Handle invalid quest IDs safely
-- Show available enum values during input
+- Improve Player XP tracking
+  - Improve level progression model
+
+- Improve quest display
+  - Better `toString()` output
+  - Display skill, difficulty, status, and reward XP
+
+- Improve CLI robustness
+  - Handle invalid menu input safely
+  - Handle invalid quest IDs safely
+  - Display available enum values during input
+
+- Add player statistics screen
+  - Current level
+  - Current XP
+  - XP needed for next level
+  - Lifetime XP earned
 
 ## Upcoming Features
 
-- Quest filtering by skill/difficulty
+- Quest filtering by skill
+- Quest filtering by difficulty
 - Completed quest history
 - Quest statistics
-- JSON save/load system
 - Achievement system
 - Daily quests
 - Streak tracking
+- JSON save/load system
 
 ---
 
@@ -106,8 +119,6 @@ The project starts as a Java CLI application and is designed to evolve later int
 - Seasonal events
 
 ---
-
-# Project Structure
 
 # Project Structure
 
@@ -204,6 +215,8 @@ This project is used to practice:
 - CLI Architecture
 - Separation of Concerns
 - Persistence
+- Dependency Injection (manual)
+- Domain Modeling
 - APIs and Async Programming
 - Frontend
 - React
