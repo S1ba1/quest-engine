@@ -1,4 +1,5 @@
 package service;
+
 import model.Difficulty;
 import model.Quest;
 import model.QuestStatus;
@@ -25,20 +26,22 @@ public class QuestService {
                 .filter(quest -> quest.getStatus() == QuestStatus.ACTIVE)
                 .toList();
     }
-    //findFirst() returns Optional<Quest>, another approach would be: .orElse(null)
+
+    // findFirst() returns Optional<Quest>, another approach would be: .orElse(null)
     public Optional<Quest> findQuestById(int id) {
         return quests.stream()
                 .filter(quest -> quest.getId() == id)
                 .findFirst();
-    }  
+    }
 
     private Quest getQuestOrThrow(int id) {
         return findQuestById(id).orElseThrow(() -> new IllegalArgumentException("Quest not found"));
     }
 
-    public void completeQuest(int id) {
+    public Quest completeQuest(int id) {
         Quest questWithId = getQuestOrThrow(id);
         questWithId.complete();
+        return questWithId;
     }
 
     public void failQuest(int id) {
