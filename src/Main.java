@@ -4,10 +4,13 @@ import ui.*;
 
 public class Main {
     public static void main(String[] args) {
-        QuestService questService = new QuestService();
-        // RewardService rewardService = new RewardService;
+        Player player = Player.create("Tony");
 
-        ConsoleUI ui = new ConsoleUI(questService);
+        QuestService questService = new QuestService();
+
+        RewardService rewardService = new RewardService(player);
+
+        ConsoleUI ui = new ConsoleUI(questService, rewardService);
         ui.start();
     }
 }
