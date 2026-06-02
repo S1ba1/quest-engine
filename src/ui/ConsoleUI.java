@@ -1,22 +1,26 @@
 package ui;
+
 import model.*;
 import service.QuestService;
-import java.util.*;
+import service.RewardService;
 
+import java.util.*;
 
 public class ConsoleUI {
     private final QuestService userQuestService;
     // private final Player userPlayer;
+    private final RewardService rewardService;
 
     private final Scanner userIn = new Scanner(System.in);
 
-    public ConsoleUI(QuestService userQuestService) {
+    public ConsoleUI(QuestService userQuestService, RewardService rewardService) {
         this.userQuestService = userQuestService;
         // this.userPlayer = userPlayer;
+        this.rewardService = rewardService;
     }
 
     public void start() {
-        while(true) {
+        while (true) {
             showMenu();
             System.out.println("Please pick by using a valid number: ");
             int choice = Integer.parseInt(userIn.nextLine());
@@ -38,7 +42,7 @@ public class ConsoleUI {
                     break;
                 case 6:
                     return;
-                
+
                 default:
                     System.out.println("invalid number! Please enter a valid number!");
                     break;
@@ -48,13 +52,12 @@ public class ConsoleUI {
 
     private void showMenu() {
         System.out.println(
-            "1. Add Quest\n" + 
-            "2. View Active Quests\n" + 
-            "3. Complete Quest\n" + 
-            "4. Fail Quest\n" + 
-            "5. View All Quests\n" + 
-            "6. Exit"
-        );
+                "1. Add Quest\n" +
+                        "2. View Active Quests\n" +
+                        "3. Complete Quest\n" +
+                        "4. Fail Quest\n" +
+                        "5. View All Quests\n" +
+                        "6. Exit");
     }
 
     private void handleAddQuest() {
@@ -101,19 +104,22 @@ public class ConsoleUI {
     private void handleCompleteQuest() {
         System.out.println("Quest-ID: ");
         int qId = Integer.parseInt(userIn.nextLine());
-        userQuestService.completeQuest(qId);
-        System.out.println("Quest with ID " + qId +" is now marked as completed!");
+        Quest completedQuest = userQuestService.completeQuest(qId);
+        rewardService.rewardPlayer(completedQuest);
+        System.out.println(
+                            "Quest with ID " + qId + " is now marked as completed! \n" +
+                            "Earned xp: " + completedQuest.getXpReward());
     }
 
     private void handleFailQuest() {
         System.out.println("Quest-ID: ");
         int qId = Integer.parseInt(userIn.nextLine());
         userQuestService.failQuest(qId);
-        System.out.println("Quest with ID " + qId +" is now marked as failed!");
+        System.out.println("Quest with ID " + qId + " is now marked as failed!");
     }
 
     private void handleViewAllQuests() {
-        System.out.println(userQuestService.getAllQuests()); 
+        System.out.println(userQuestService.getAllQuests());
     }
 
 }
