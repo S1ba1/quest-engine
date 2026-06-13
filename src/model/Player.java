@@ -46,6 +46,10 @@ public class Player {
         return level * 100;
     }
 
+    public long getRemainingXp() {
+        return getLevelThreshhold() - currentXP;
+    }
+
     public void rewardXP(long xp) {
         totalXP += xp;
         if (currentXP + xp > getLevelThreshhold()) {

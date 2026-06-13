@@ -10,7 +10,7 @@ public class Main {
 
         RewardService rewardService = new RewardService(player);
 
-        ConsoleUI ui = new ConsoleUI(questService, rewardService);
+        ConsoleUI ui = new ConsoleUI(questService, rewardService, player);
         ui.start();
     }
 }
