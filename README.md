@@ -17,62 +17,83 @@ The project starts as a Java CLI application and is designed to evolve later int
 🚧 In active development.
 
 ---
+## Current Milestone
 
+The application now supports a complete gameplay loop:
+
+1. Create a quest
+2. Complete or fail the quest
+3. Earn XP rewards
+4. Level up the player
+5. View progression statistics
+
+The next major milestone is persistence, allowing player progress and quests to survive application restarts.
+
+---
 # Features
 
 ## Current Features
 
-- Quest creation
-- Quest completion/failure system
+### Quest Management
+- Create quests
+- Complete quests
+- Fail quests
+- View all quests
+- View active quests
 - Difficulty-based XP rewards
-- Quest statuses
-- Validation for safe object creation
-- Factory-based quest creation
-- Immutable core quest properties
-- Quest management service
-- Stream-based quest filtering
-- Optional-based quest lookup
-- Console-based CLI interface
+- Enum-based skill and difficulty system
+- Quest validation and safe creation
+
+### Player Progression
+- Player creation
+- XP reward system
+- Automatic level progression
+- XP threshold calculation
+- Player statistics view
+
+### Console Interface
 - Interactive menu system
-- Enum-based user input parsing
-- Custom quest display formatting
-- Player progression system
-- Automatic XP rewards for completed quests
-- Dynamic level-up system
+- Safe numeric input handling
+- Safe enum input handling
+- Available enum values displayed to users
+- Quest completion feedback
+- Improved quest display output
+
+### Architecture
+- Domain-driven model classes
+- Factory method creation
+- Service layer architecture
+- Separation of concerns
+- Optional-based lookups
+- Stream-based filtering
+
 ---
 
 # Next Steps
 
-## Immediate Next Steps
+### Persistence Phase (Current Focus)
 
-- Improve Player XP tracking
-  - Improve level progression model
+- Design repository architecture
+- Create QuestRepository interface
+- Create PlayerRepository interface
+- Design QuestData storage model
+- Design PlayerData storage model
+- Implement JSON persistence
+- Save quests to disk
+- Load quests from disk
+- Save player progression
+- Restore player progression on startup
 
-- Improve quest display
-  - Better `toString()` output
-  - Display skill, difficulty, status, and reward XP
+### Gameplay Improvements
 
-- Improve CLI robustness
-  - Handle invalid menu input safely
-  - Handle invalid quest IDs safely
-  - Display available enum values during input
-
-- Add player statistics screen
-  - Current level
-  - Current XP
-  - XP needed for next level
-  - Lifetime XP earned
-
-## Upcoming Features
-
+- Completed quest history
 - Quest filtering by skill
 - Quest filtering by difficulty
-- Completed quest history
-- Quest statistics
+- Quest filtering by status
+- Quest statistics dashboard
 - Achievement system
 - Daily quests
 - Streak tracking
-- JSON save/load system
 
 ---
 
