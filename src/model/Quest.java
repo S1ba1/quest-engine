@@ -27,7 +27,7 @@ public class Quest {
             throw new IllegalArgumentException("Title cannot be empty");
         }
 
-        if (description == null || description.isBlank()) {
+        if (description == null) {
             //if description is empty stop creation immediately
             throw new IllegalArgumentException("Description cannot be empty");
         }
@@ -102,9 +102,14 @@ public class Quest {
         return status;
     }
     
-    //very simple toString() -> testing
     @Override
     public String toString() {
-        return id + ". " + title;
+        String output = "\n" + "Id: " + id + "\n" +
+                        "Title: " + title + "\n" + 
+                        "Skill: " + skill + "\n" +
+                        "Difficulty: " + difficulty + "\n" +
+                        "Reward: " + xpReward + "xp" + "\n" +
+                        "Status: " + status + "\n";
+        return output;
     }
 }
